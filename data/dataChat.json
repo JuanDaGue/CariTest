@@ -6,5 +6,121 @@
     {
         "pregunta": "¿Cuál es el horario de atención?",
         "respuesta": "Nuestro horario es de lunes a viernes de 8 am a 5 pm."
+    },
+    {
+        "pregunta": "¿Dónde están ubicados?",
+        "respuesta": "Estamos ubicados en la Calle 123, Medellín, Antioquia."
+    },
+    {
+        "pregunta": "¿Ofrecen servicios de entrega?",
+        "respuesta": "Sí, ofrecemos servicios de entrega a domicilio."
+    },
+    {
+        "pregunta": "¿Cómo puedo contactar al soporte técnico?",
+        "respuesta": "Puedes contactar al soporte técnico a través del correo soporte@empresa.com o llamando al 123-456-7890."
+    },
+    {
+        "pregunta": "¿Cuáles son los métodos de pago aceptados?",
+        "respuesta": "Aceptamos pagos con tarjeta de crédito, débito y transferencias bancarias."
+    },
+    {
+        "pregunta": "¿Puedo cancelar mi suscripción?",
+        "respuesta": "Sí, puedes cancelar tu suscripción en cualquier momento desde tu cuenta."
+    },
+    {
+        "pregunta": "¿Tienen políticas de reembolso?",
+        "respuesta": "Sí, ofrecemos reembolsos dentro de los 30 días posteriores a la compra."
+    },
+    {
+        "pregunta": "¿Puedo rastrear mi pedido?",
+        "respuesta": "Sí, puedes rastrear tu pedido en la sección 'Mis Pedidos' de tu cuenta."
+    },
+    {
+        "pregunta": "¿Ofrecen descuentos por volumen?",
+        "respuesta": "Sí, ofrecemos descuentos por volumen. Por favor, contacta a ventas@empresa.com para más detalles."
+    },
+    {
+        "pregunta": "¿Tienen tiendas físicas?",
+        "respuesta": "Sí, tenemos varias tiendas físicas. Puedes encontrar la más cercana en la sección 'Tiendas' de nuestro sitio web."
+    },
+    {
+        "pregunta": "¿Cuánto tiempo tardará en llegar mi pedido?",
+        "respuesta": "El tiempo de entrega varía según tu ubicación, pero generalmente tarda entre 3 y 5 días hábiles."
+    },
+    {
+        "pregunta": "¿Puedo cambiar mi dirección de envío después de hacer un pedido?",
+        "respuesta": "Sí, puedes cambiar tu dirección de envío contactando a nuestro servicio de atención al cliente."
+    },
+    {
+        "pregunta": "¿Ofrecen garantía en sus productos?",
+        "respuesta": "Sí, todos nuestros productos vienen con una garantía de un año."
+    },
+    {
+        "pregunta": "¿Cómo puedo hacer una devolución?",
+        "respuesta": "Puedes hacer una devolución iniciando sesión en tu cuenta y seleccionando la opción de devolución en 'Mis Pedidos'."
+    },
+    {
+        "pregunta": "¿Tienen una aplicación móvil?",
+        "respuesta": "Sí, puedes descargar nuestra aplicación móvil desde la App Store o Google Play."
+    },
+    {
+        "pregunta": "¿Puedo cambiar un producto después de recibirlo?",
+        "respuesta": "Sí, puedes cambiar un producto dentro de los 30 días posteriores a la compra."
+    },
+    {
+        "pregunta": "¿Ofrecen algún programa de fidelidad?",
+        "respuesta": "Sí, tenemos un programa de fidelidad. Puedes registrarte en la sección 'Fidelidad' de nuestro sitio web."
+    },
+    {
+        "pregunta": "¿Puedo programar una entrega para una fecha específica?",
+        "respuesta": "Sí, puedes programar una entrega para una fecha específica al momento de realizar tu pedido."
+    },
+    {
+        "pregunta": "¿Ofrecen productos personalizados?",
+        "respuesta": "Sí, ofrecemos productos personalizados. Por favor, contacta a ventas@empresa.com para más información."
+    },
+    {
+        "pregunta": "¿Cómo puedo saber si un producto está en stock?",
+        "respuesta": "La disponibilidad del producto se muestra en la página del producto en nuestro sitio web."
+    },
+    {
+        "pregunta": "¿Puedo hacer un pedido por teléfono?",
+        "respuesta": "Sí, puedes hacer un pedido por teléfono llamando al 123-456-7890."
+    },
+    {
+        "pregunta": "¿Ofrecen soporte en otros idiomas?",
+        "respuesta": "Sí, ofrecemos soporte en inglés y español."
+    },
+    {
+        "pregunta": "¿Cómo puedo actualizar mi información de pago?",
+        "respuesta": "Puedes actualizar tu información de pago en la sección 'Métodos de Pago' de tu cuenta."
+    },
+    {
+        "pregunta": "¿Puedo agregar elementos a un pedido existente?",
+        "respuesta": "No, pero puedes hacer un nuevo pedido con los elementos adicionales que necesitas."
+    },
+    {
+        "pregunta": "¿Tienen alguna promoción especial?",
+        "respuesta": "Puedes ver nuestras promociones actuales en la sección 'Ofertas' de nuestro sitio web."
+    },
+    {
+        "pregunta": "¿Qué hago si recibí un producto defectuoso?",
+        "respuesta": "Por favor, contacta a nuestro servicio de atención al cliente para obtener asistencia con productos defectuosos."
+    },
+    {
+        "pregunta": "¿Cómo puedo suscribirme al boletín de noticias?",
+        "respuesta": "Puedes suscribirte a nuestro boletín de noticias ingresando tu correo electrónico en la parte inferior de nuestro sitio web."
+    },
+    {
+        "pregunta": "¿Dónde puedo encontrar las políticas de privacidad?",
+        "respuesta": "Puedes encontrar nuestras políticas de privacidad en la sección 'Políticas de Privacidad' de nuestro sitio web."
+    },
+    {
+        "pregunta": "¿Ofrecen tarjetas de regalo?",
+        "respuesta": "Sí, ofrecemos tarjetas de regalo. Puedes comprarlas en la sección 'Tarjetas de Regalo' de nuestro sitio web."
+    },
+    {
+        "pregunta": "¿Cómo puedo reportar un problema con mi pedido?",
+        "respuesta": "Puedes reportar un problema con tu pedido contactando a nuestro servicio de atención al cliente."
     }
 ]
