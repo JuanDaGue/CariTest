@@ -1,2 +1,2 @@
-docker build -t faq-suggest .
-docker run -p 8000:8000 faq-suggest
+docker build -t cari_test .
+docker run -p 8000:8000 cari_test
