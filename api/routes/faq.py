@@ -16,6 +16,6 @@ async def suggest_faq(query: FAQRequest):
 
     return FAQResponse(
         query=query.query,
-        suggestion=suggestion.response,
-        confidence=suggestion.confidence
+        suggestion=suggestion["response"],  # Acceder como diccionario
+        confidence=suggestion["confidence"]
     )
