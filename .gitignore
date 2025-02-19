@@ -1,0 +1,31 @@
+# Ignore virtual environment
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Editor & IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs & temporary files
+*.log
+*.out
+*.pid
+
+# Dependency files
+Pipfile
+Pipfile.lock
+requirements.txt
+
+# Ignore environment variables and credentials
+.env
+.envrc
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
