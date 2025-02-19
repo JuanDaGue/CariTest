@@ -1,5 +1,4 @@
-# config/config.py
-from pydantic_settings import BaseSettings  # Cambia esta línea
+from pydantic_settings import BaseSettings
 from pydantic import Field
 
 

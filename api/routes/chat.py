@@ -9,13 +9,22 @@ gemini_client = GeminiClient()
 @router.post("/generate", response_model=ChatResponse)
 async def chat_with_gemini(request: ChatRequest):
     try:
-        response = gemini_client.generate_response(
+        if not request.prompt.strip():
+            raise HTTPException(status_code=400, detail="El prompt no puede estar vacío")
+        
+        response_text = gemini_client.generate_response(
             prompt=request.prompt,
             context=request.context
         )
+        
         return ChatResponse(
+            success=True,
             prompt=request.prompt,
-            response=response
+            response=response_text
         )
+        
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error interno: {str(e)}"
+        )

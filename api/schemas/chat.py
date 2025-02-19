@@ -1,4 +1,3 @@
-from api.schemas.base import BaseResponse
 from pydantic import BaseModel
 
 
@@ -7,6 +6,8 @@ class ChatRequest(BaseModel):
     context: str = None
 
 
-class ChatResponse(BaseResponse):
+class ChatResponse(BaseModel):
+    success: bool
     prompt: str
     response: str
+    error: str = None

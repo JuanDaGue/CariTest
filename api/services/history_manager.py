@@ -3,7 +3,6 @@ from datetime import datetime
 from typing import List, Dict
 from config.config import settings
 
-# Estructura de datos para el historial
 history: deque = deque(maxlen=settings.HISTORY_MAX_SIZE)
 
 

@@ -1,33 +1,38 @@
-from difflib import get_close_matches
+from typing import Dict, Union
 import json
-from typing import Dict
+from difflib import get_close_matches
 from config.config import settings
 
 # Cargar base de conocimiento
 with open(settings.FAQ_FILE, "r") as f:
     faqs = json.load(f)
 
-questions = [faq["pregunta"] for faq in faqs]
+# Lista de saludos comunes
+SALUDOS = [
+    "hola", "buenos días", "buenas tardes", "buenas noches",
+    "hi", "hello", "saludos", "qué tal", "cómo estás"
+]
 
-def get_suggestion(query: str) -> Dict:
-    # Preprocesar la consulta
-    processed_query = query.lower().strip()
 
-    # Búsqueda exacta
-    exact_match = next(
-        (faq for faq in faqs if faq["pregunta"].lower() == processed_query),
-        None
-    )
-    if exact_match:
+def es_saludo(query: str) -> bool:
+    """Determina si la consulta es un saludo."""
+    query = query.lower().strip()
+    return any(saludo in query for saludo in SALUDOS)
+
+
+def get_suggestion(query: str) -> Dict[str, Union[str, float]]:
+    # Manejar saludos
+    if es_saludo(query):
         return {
-            "response": exact_match["respuesta"],
+            "response": "¡Hola! Soy un asistente virtual. ¿En qué puedo ayudarte hoy?",
             "confidence": 1.0,
-            "matched_question": exact_match["pregunta"]
+            "matched_question": "Saludo"
         }
 
-    # Búsqueda aproximada
+    # Búsqueda en FAQs
+    questions = [faq["pregunta"] for faq in faqs]
     matches = get_close_matches(
-        processed_query,
+        query.lower(),
         [q.lower() for q in questions],
         n=1,
         cutoff=settings.SIMILARITY_THRESHOLD
@@ -42,12 +47,12 @@ def get_suggestion(query: str) -> Dict:
         )
         return {
             "response": answer,
-            "confidence": round(len(matches[0])/len(processed_query), 2),
+            "confidence": round(len(matches[0])/len(query), 2),
             "matched_question": original_question
         }
 
     return {
-        "response": "Por favor contacte al soporte técnico para ayuda adicional.",
+        "response": "No encontré una respuesta específica. ¿Podrías proporcionar más detalles?",
         "confidence": 0.0,
         "matched_question": ""
     }
