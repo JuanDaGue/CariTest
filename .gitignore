@@ -20,7 +20,7 @@ __pycache__/
 # Dependency files
 Pipfile
 Pipfile.lock
-requirements.txt
+
 
 # Ignore environment variables and credentials
 .env
