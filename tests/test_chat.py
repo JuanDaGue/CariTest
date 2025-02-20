@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
-from main import app
-from api.schemas.chat import ChatResponse
+from ..main import app
+from ..api.schemas.chat import ChatResponse
 import pytest
 
 client = TestClient(app)
