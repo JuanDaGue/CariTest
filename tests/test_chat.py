@@ -8,6 +8,7 @@ client = TestClient(app)
 # Mock de la respuesta de Gemini
 MOCK_GEMINI_RESPONSE = "¡Hola! Soy Gemini, tu asistente de IA."
 
+
 def test_chat_generate_success(monkeypatch):
     # Mock de la función generate_response de GeminiClient
     def mock_generate_response(*args, **kwargs):
@@ -37,6 +38,7 @@ def test_chat_generate_success(monkeypatch):
         "error": None
     }
 
+
 def test_chat_generate_empty_prompt():
     # Datos de prueba con prompt vacío
     test_data = {
@@ -50,6 +52,7 @@ def test_chat_generate_empty_prompt():
     # Verificaciones
     assert response.status_code == 400
     assert "El prompt no puede estar vacío" in response.json()["detail"]
+
 
 def test_chat_generate_gemini_error(monkeypatch):
     # Mock para simular un error en Gemini
