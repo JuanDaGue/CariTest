@@ -15,12 +15,11 @@ A FastAPI-based system that provides automated FAQ suggestions and integrates wi
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Configuration](#configuration)
-- [Running the Application](#running-the-application)
-- [API Endpoints](#api-endpoints)
 - [Docker Deployment](#docker-deployment)
 - [Testing](#testing)
-
+- [API Endpoints](#api-endpoints)
+- [Documentation](#documentation)
+- [Project Structure](#project-structure)
 
 ---
 
@@ -36,80 +35,62 @@ A FastAPI-based system that provides automated FAQ suggestions and integrates wi
 ## Installation
 
 1. Clone the repository:
-```bash
-git clone https://github.com/your-username/faq-chat-system.git
-cd faq-chat-system
+    ```bash
+    git clone https://github.com/your-username/faq-chat-system.git
+    cd faq-chat-system
+    ```
+2. Create `.env` file with your Gemini API key:
+    ```bash
+    GEMINI_API_KEY=your-api-key
+    ```
 
-2. Create and activate virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate
-```
+3. Add environment variables to `.env` file:
+    ```bash
+    GEMINI_API_KEY=your-api-key
+    ```
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+4. Create `data/dataChat.json` file with your FAQ questions:
+    ```json
+    [
+        {
+            "pregunta": "¿Cómo cambio mi contraseña?",
+            "respuesta": "Puedes cambiar tu contraseña en la sección de configuración de tu perfil."
+        },
+        {
+            "pregunta": "¿Cuál es el horario de atención?",
+            "respuesta": "Nuestro horario es de lunes a viernes de 8 am a 5 pm."
+        }
+    ]
+    ```
 
-## Configuration
-1. Create .env file with your Gemini API key:
-
-1. Create `.env` file with your Gemini API key:
-```bash
-GEMINI_API_KEY=your-api-key
-```
-
-2. add environment variables to `.env` file:
-```bash
-GEMINI_API_KEY=your-api-key
-```
-
-3. Create `data/dataChat.json` file with your FAQ questions:
-```json
-[
-    {
-        "pregunta": "¿Cómo cambio mi contraseña?",
-        "respuesta": "Puedes cambiar tu contraseña en la sección de configuración de tu perfil."
-    },
-    {
-        "pregunta": "¿Cuál es el horario de atención?",
-        "respuesta": "Nuestro horario es de lunes a viernes de 8 am a 5 pm."
-    }
-]
-```
-
-## Running the Application
-
-```bash
-uvicorn main:app --reload
-```
-
-## API Endpoints
-
-### FAQ
-
-#### GET /faq/suggest
-
-Access the API at: http://localhost:8000/docs
-Endpoint to suggest FAQ answers based on user queries.
+---
 
 ## Docker Deployment
 
 To deploy the application using Docker, follow these steps:
 
 1. Build the Docker image:
-```bash
-docker build -t faq-chat .
-```
+    ```bash
+    docker buildx build -t "faq-chat:faq-chat" .
+    ```
 
 2. Run the Docker container:
-```bash
-docker run -p 8000:8000 faq-chat
-```
+    ```bash
+    docker run -d -p 8000:8000 --name contenedorfaq faq-chat:faq-chat
+    ```
 
-3.  verify the container is running:
+3. Verify the container is running:
+    ```bash
+    docker ps
+    ```
+
+---
+
+## Testing
+
+To run the tests, follow these steps:
 ```bash
-docker ps
+docker exec -it contenedorfaq /bin/bash -c "pytest"
 ```
 
 ## API Endpoints
@@ -139,21 +120,6 @@ Endpoint to reset the history of user queries and their corresponding suggestion
 
 Access the API at: http://localhost:8000/docs
 Endpoint to generate a chat response based on user queries and context.
-
-## Testing
-
-To run the tests, follow these steps:
-
-1. Run all tests:
-```bash
-pytest -v tests/
-```  
-2. Run specific test:
-```bash
-pytest -v tests/test_faq.py
-pytest -v tests/test_history.py
-pytest -v tests/test_chat.py
-```
 
 ## Documentation
 
